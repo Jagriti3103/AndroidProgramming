@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "455181324156",
+    "project_id": "mapslogin-b9330",
+    "storage_bucket": "mapslogin-b9330.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455181324156:android:f33df09611d659f5ec1ef9",
+        "android_client_info": {
+          "package_name": "com.example.mapslogin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAnIZTdKIeBu1IGT6P_EgJDSpaZW2AJVVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
