@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "493262124374",
+    "project_id": "sajni-bfac7",
+    "storage_bucket": "sajni-bfac7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493262124374:android:c8c4a5fc6d6d5b449b92f7",
+        "android_client_info": {
+          "package_name": "com.example.sajniapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBD7FVAiRv_wh8wONPrzZguPF8q6DrlnHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
