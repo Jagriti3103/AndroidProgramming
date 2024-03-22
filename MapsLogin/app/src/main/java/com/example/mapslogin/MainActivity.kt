@@ -1,7 +1,9 @@
 package com.example.mapslogin
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
@@ -15,12 +17,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val loginbtn = findViewById<Button>(R.id.loginbtn)
+        val Signupbtn = findViewById<Button>(R.id.Signupbtn)
         val username = findViewById<TextInputEditText>(R.id.etUsername)
         val email = findViewById<TextInputEditText>(R.id.etemail)
         val pwd = findViewById<TextInputEditText>(R.id.etpassword)
+        val signintxt = findViewById<TextView>(R.id.Sigintext)
 
-        loginbtn.setOnClickListener(){
+        signintxt.setOnClickListener(){
+            val intent = Intent(this, SignIn::class.java)
+            startActivity(intent)
+        }
+
+        Signupbtn.setOnClickListener(){
             val username = username.text.toString()
             val email = email.text.toString()
             val pwd= pwd.text.toString()
