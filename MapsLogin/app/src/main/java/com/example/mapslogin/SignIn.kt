@@ -21,7 +21,7 @@ class SignIn : AppCompatActivity() {
 
         val signInButton = findViewById<Button>(R.id.signinbtn)
         val emailEditText = findViewById<TextInputEditText>(R.id.etemail)
-        val passwordEditText = findViewById<TextInputEditText>(R.id.etPassword)
+        val passwordEditText = findViewById<TextInputEditText>(R.id.etpassword)
 
         signInButton.setOnClickListener {
             val email = emailEditText.text.toString().trim()
@@ -33,12 +33,11 @@ class SignIn : AppCompatActivity() {
             }
 
             // Sign in with email and password
-            firebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
+            firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, navigate to HomePage
-                        val intent = Intent(this, HomePage::class.java)
-                        startActivity(intent)
+                        val intenthome = Intent(this, HomePage::class.java)
+                        startActivity(intenthome)
                         finish() // Finish the current activity to prevent going back to the sign-in page
                     } else {
                         // If sign in fails, display a message to the user.
