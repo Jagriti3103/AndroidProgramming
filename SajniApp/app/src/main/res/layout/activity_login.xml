@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/LightBlue"
+    tools:context=".login">
+    <ImageButton
+        android:layout_marginTop="80dp"
+        android:id="@+id/logo"
+        android:layout_width="190dp"
+        android:layout_gravity="center"
+        android:layout_height="150dp"
+        android:scaleType="fitCenter"
+        android:backgroundTint="@color/LightBlue"
+        app:srcCompat="@drawable/sajni_logo" />
+    <TextView
+        android:id="@+id/appname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:textColor="@color/NavyBlue"
+        android:textSize="40dp"
+        android:text="Sajni" />
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:fontFamily="serif"
+        android:textColor="@color/NavyBlue"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:text="Backbone of Our Nation's Heroes" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:helperText="*Required"
+        app:helperTextTextColor="#FF0000"
+        android:layout_margin="25dp"
+        android:background="@drawable/greybg"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/email"
+            android:background="@drawable/greybg"
+            android:inputType="textEmailAddress"
+            android:hint=" E-Mail" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:helperText="*Required"
+        app:helperTextTextColor="#FF0000"
+        android:layout_marginHorizontal="25dp"
+        android:background="@drawable/greybg">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:id="@+id/password"
+            android:background="@drawable/greybg"
+            android:inputType="textPassword"
+            android:hint=" Password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Remember me"
+            android:layout_centerVertical="true"
+            android:alpha="0.7"/>
+
+        <TextView
+            android:id="@+id/forgotpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:text="Forgot Password ?"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="150dp"
+        android:layout_gravity="center"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content"
+        android:text="Log In" />
+
+    <TextView
+        android:id="@+id/gotosignup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New here? Join us"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>
