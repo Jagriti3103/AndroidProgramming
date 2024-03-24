@@ -1,7 +1,7 @@
 package com.example.sajniapp
 
+import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract.CommonDataKinds.Email
 import android.util.Log
 import android.util.Patterns
 import android.widget.TextView
@@ -17,31 +17,38 @@ class SignUp : AppCompatActivity() {
     private lateinit var binding: ActivitySignUpBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         //set view binding
         binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        auth= Firebase.auth
-        binding.btnSignUp.setOnClickListener(){
+        auth = Firebase.auth
+        val loginbtn = findViewById<TextView>(R.id.gotologin)
+        loginbtn.setOnClickListener(){
+            val intentlogin = Intent(this, login::class.java)
+            startActivity(intentlogin)
+            finish()
+        }
+        binding.btnSignUp.setOnClickListener() {
             val email = binding.etemail.text.toString()
-            val password =binding.etpassword.text.toString()
-            if(checkAllField()){
-                auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(){
-                    //if successful account is created
-                    //is also signed in
-                    if(it.isSuccessful){
-                        //can ignore
+            val password = binding.etpassword.text.toString()
+            if (checkAllField()) {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        // Account created successfully
                         auth.signOut()
-                        Toast.makeText(this,"Account Created Successfully!",Toast.LENGTH_LONG).show()
-                    }
-                    else{
-                        Log.e("error", it.exception.toString())
+                        Toast.makeText(this, "Account Created Successfully!", Toast.LENGTH_LONG).show()
+                        // Navigate to another activity if needed
+                    } else {
+                        // Account creation failed
+                        Toast.makeText(this, "Account creation failed: ${task.exception?.message}", Toast.LENGTH_LONG).show()
+                        Log.e("SignUp", "Error creating account", task.exception)
                     }
                 }
             }
         }
-        
     }
+
     private fun checkAllField(): Boolean {
         val email = binding.etemail.text.toString()
         if(binding.etemail.text.toString() == ""){
@@ -73,6 +80,5 @@ class SignUp : AppCompatActivity() {
             return false
         }
         return true
-
     }
 }
