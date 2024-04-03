@@ -1,0 +1,26 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable custom_bg
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable icon
+id buttonLayout
+id imageView
+id main
+id mainbtn
+id nobtn
+id textView
+id textView2
+id textView3
+id yesbtn
+layout activity_main
+layout custom_dialogue
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.Alertbox
+style Theme.Alertbox
+xml backup_rules
+xml data_extraction_rules
